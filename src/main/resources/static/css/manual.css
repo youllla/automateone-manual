@@ -1,0 +1,268 @@
+@charset "UTF-8";
+
+.d-flex {
+	font-family: Malgun Gothic;
+}
+
+#page-content-wrapper {
+	width: 100%;
+	height: 100vh;
+    overflow: auto;
+}
+
+.container-fluid {
+	width: 80%;
+}
+
+.page-depth {
+	padding: .375rem 0;
+	display: initial;
+	width: 100%;
+}
+
+.page-depth>li {
+	display: inline-block;
+}
+
+.page-depth>li>a {
+	color: #333;
+	text-decoration: none;
+}
+
+.title {
+	font-weight: bold;
+	border-bottom: 1px solid #666;
+}
+
+.subTitle {
+	font-size: 22px;
+	font-weight: bold;
+	border-bottom: 1px solid #c9ced4;
+}
+
+.content>p {
+	font-size: 14px;
+}
+
+.logo {
+	float: right;
+	padding-right: 5px;
+}
+
+
+/* ====== manualWrite Page ====== */
+.category {
+	width: 75%;
+	min-width: 200px;
+}
+
+.class-name {
+	font-weight: bold;
+	text-align: right;
+	margin-bottom: 32px;
+}
+
+#version-box {
+	width: 20%;
+	min-width: 200px;
+}
+
+.version-explain {
+	color: red;
+	font-size: 12px;
+	margin-left: 10px;
+	vertical-align: text-top;
+}
+
+.select-box {
+	margin-bottom: 30px;
+}
+
+.select-box>button {
+	font-size: 15px;
+	color: #6b6b6b;
+	background-color: #f7f7f7;
+	border: 1px solid #828282;
+	border-radius: 2px;
+	padding: 1px 15px;
+	margin-left: 10px;
+}
+
+.select-box>button:hover {
+	color: #ffffff;
+	background-color: #bbbbbb;
+	box-shadow: 2px 2px 2px #828282;
+}
+
+/* editor */
+.editor {
+	margin-top: 20px;
+}
+
+.editor>input {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 1px solid #ddd;
+}
+
+.editor>input:focus {
+	outline: none;
+}	
+
+/* .md-editor.active {
+	border-color: #ddd;
+	box-shadow: none;
+}
+
+.md-editor>textarea {
+	background-color: #ffffff;
+} */
+
+button[title="Preview (Ctrl+P)"] {
+	background-color: #ea861e;
+	border-color: #ea861e;
+}
+
+button[title="Preview (Ctrl+P)"]:hover {
+	background-color: #ea861e;
+	border-color: #ea861e;
+}
+
+.btn-primary:not (:disabled ):not (.disabled ).active, .btn-primary:not
+	(:disabled ):not (.disabled ):active, .show>.btn-primary.dropdown-toggle
+	{
+	background-color: #ea861e;
+	border-color: #ea861e;
+}
+
+.btn-primary:not (:disabled ):not (.disabled ).active:focus,
+	.btn-primary:not (:disabled ):not (.disabled ):active:focus, .show>.btn-primary.dropdown-toggle:focus
+	{
+	box-shadow: none;
+}
+
+.write-button-group {
+	text-align: right;
+	margin-top: 20px;
+}
+
+.write-button {
+	font-weight: bold;
+	color: #ea861e;
+	background-color: #ffffff;
+	margin-left: 10px;
+	margin-bottom: 30px;
+	border: 2px solid #ea861e;
+	padding: 4px 30px;
+}
+
+.write-button:hover {
+	color: #ffffff;
+	background-color: #ea861e;
+	font-weight: bold;
+}
+
+/* editor -> code, quote */
+.well-sm {
+	padding: 9px;
+	border-radius: 3px;
+}
+
+.well {
+	min-height: 20px;
+	padding: 19px;
+	margin-bottom: 20px;
+	background-color: #f5f5f5;
+	border: 1px solid #e3e3e3;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgb(0 0 0/ 5%);
+	box-shadow: inset 0 1px 1px rgb(0 0 0/ 5%);
+}
+
+.well blockquote {
+	border-color: #ddd;
+	border-color: rgba(0, 0, 0, .15);
+	height: 35px;
+}
+
+.well img {
+	margin-top: 10px;
+	max-width: 100%;
+}
+
+blockquote {
+	vertical-align: middle;
+	padding: 1px 20px;
+	margin: 0 0 20px;
+	font-size: 17.5px;
+	border-left: 5px solid #eee;
+}
+
+blockquote>p {
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+pre {
+	display: block;
+	padding: 9.5px;
+	margin: 0 0 10px;
+	font-size: 13px;
+	line-height: 1.42857143;
+	color: #333;
+	word-break: break-all;
+	word-wrap: break-word;
+	background-color: #f5f5f5;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+/* popup */
+#popup_wrap {
+	width: 560px;
+	height: 200px;
+	background: #fff;
+	border: solid 1px #666666;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin: -200px 0 0 -250px;
+	z-index: 9999;
+	display: none;
+}
+
+#mask {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	background: rgba(0, 0, 0, 0.7) repeat;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	display: none;
+}
+
+.popup-cont {
+	width: 478px;
+	margin: 45px auto;
+	text-align: center;
+}
+
+.popup-cont input {
+	width: 250px;
+	height: 36px;
+}
+
+.popup-cont button {
+	width: 138px;
+	height: 36px;
+	margin: 0 5px 0 5px;
+	line-height: 36px;
+	background: #ea861e;
+	color: #ffffff;
+	text-align: center;
+	border: none;
+	border-radius: 5px;
+	font-size: 16px;
+}

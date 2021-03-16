@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"> 
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2021.1.119/styles/kendo.default-v2.min.css" />
+    <script src="https://kendo.cdn.telerik.com/2021.1.119/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2021.1.119/js/kendo.all.min.js"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link th:href="@{/css/sidebar.css}" rel="stylesheet">
+	<link th:href="@{/css/manual.css}" rel="stylesheet">
+	
+	
+	<!-- markdown -->
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
+	<!-- <script data-require="bootstrap@3.1.1" data-semver="3.1.1" src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script> -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+	
+	<script data-require="marked@*" data-semver="0.3.19" src="http://cdnjs.cloudflare.com/ajax/libs/marked/0.3.19/marked.js"></script>
+	<script src="https://cdn.rawgit.com/toopay/bootstrap-markdown/master/js/bootstrap-markdown.js"></script>
+	<script src="https://rawgit.com/lodev09/jquery-filedrop/master/jquery.filedrop.js"></script>
+	<script src="https://rawgit.com/jeresig/jquery.hotkeys/master/jquery.hotkeys.js"></script>
+	
+	<!-- <link data-require="bootstrap-css@3.4.1" data-semver="3.4.1" rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+	<link data-require="fontawesome@4.1.0" data-semver="4.1.0" rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" /> -->
+	<link rel="stylesheet" href="https://cdn.rawgit.com/toopay/bootstrap-markdown/master/css/bootstrap-markdown.min.css" />
+
+	<link th:href="@{/css/style.css}" rel="stylesheet">
+	<script th:src="@{/js/script.js}"></script>
+	
+	
+	<style>
+	.category {
+		width: 75%;
+	}
+	
+	.class-name {
+		font-weight: bold;
+		text-align: right;
+		margin-bottom: 33px;
+	}
+	
+	.select-box {
+		margin-bottom: 30px;
+	}
+	
+	.select-box>button {
+		font-size: 15px;
+		color: #6b6b6b;
+		background-color: #f7f7f7;
+		border: 1px solid #828282;
+		border-radius: 2px;
+		padding: 1px 15px;
+		margin-left: 10px;
+	}
+	
+	.select-box>button:hover {
+		box-shadow: 1px 1px 1px #828282;
+	}
+	
+	/* editor */
+	.editor {
+		margin-top: 20px;
+	
+	}
+	
+	.md-editor.active {
+		border-color: #ddd;
+		box-shadow: none;
+	}
+	
+	.md-editor>textarea {
+		background-color: #ffffff;
+	}
+	
+	button[title="Preview (Ctrl+P)"] {
+		background-color: #ea861e;
+		border-color: #ea861e;
+	}
+	
+	button[title="Preview (Ctrl+P)"]:hover {
+		background-color: #ea861e;
+		border-color: #ea861e;
+	}
+	
+	.btn-primary:not(:disabled):not(.disabled).active, 
+	.btn-primary:not(:disabled):not(.disabled):active, 
+	.show>.btn-primary.dropdown-toggle {
+		background-color: #ea861e;
+		border-color: #ea861e;
+	}
+	
+	.btn-primary:not(:disabled):not(.disabled).active:focus, 
+	.btn-primary:not(:disabled):not(.disabled):active:focus, 
+	.show>.btn-primary.dropdown-toggle:focus {
+		box-shadow: none;
+	}
+	
+	.write-button-group {
+		text-align: right;
+		margin-top: 20px;
+	}
+	
+	.write-button {
+		font-weight: bold;
+		color: #ea861e;
+		background-color: #ffffff;
+		margin-left: 10px;
+		border: 2px solid #ea861e;
+		padding: 4px 30px;
+	}
+	
+	.write-button:hover {
+		color: #ffffff;
+		background-color: #ea861e;
+		font-weight: bold;
+	}
+	
+	/* bootstrap 통일 */
+	.well-sm {
+	    padding: 9px;
+	    border-radius: 3px;
+	}
+	
+	.well {
+	    min-height: 20px;
+	    padding: 19px;
+	    margin-bottom: 20px;
+	    background-color: #f5f5f5;
+	    border: 1px solid #e3e3e3;
+	    border-radius: 4px;
+	    -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 5%);
+	    box-shadow: inset 0 1px 1px rgb(0 0 0 / 5%);
+	}
+	
+	.well blockquote {
+	    border-color: #ddd;
+	    border-color: rgba(0,0,0,.15);
+	    height: 35px;
+	}
+	
+	blockquote {
+		vertical-align: middle;
+	    padding: 1px 20px;
+	    margin: 0 0 20px;
+	    font-size: 17.5px;
+	    border-left: 5px solid #eee;
+	}
+	
+	blockquote>p {
+	    margin-top: auto;
+	    margin-bottom: auto;
+	}
+	
+	pre {
+	    display: block;
+	    padding: 9.5px;
+	    margin: 0 0 10px;
+	    font-size: 13px;
+	    line-height: 1.42857143;
+	    color: #333;
+	    word-break: break-all;
+	    word-wrap: break-word;
+	    background-color: #f5f5f5;
+	    border: 1px solid #ccc;
+	    border-radius: 4px;
+	}
+	
+
+	/* popup */
+	#popup_wrap {
+		width: 560px;
+		height: 200px;
+		background: #fff;
+		border: solid 1px #666666;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		margin: -200px 0 0 -250px;
+		z-index: 9999;
+		display: none;
+	}
+	
+	#mask {
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		background: rgba(0, 0, 0, 0.7) repeat;
+		top: 0;
+		left: 0;
+		z-index: 999;
+		display: none;
+	}
+	
+	.popup-cont {
+		width: 478px;
+		margin: 45px auto;
+		text-align: center;
+	}
+	
+	.popup-cont input {
+		width: 250px;
+		height: 36px;
+	}
+	
+	.popup-cont button {
+		width: 138px;
+		height: 36px;
+		margin: 0 5px 0 5px;
+		line-height: 36px;
+		background: #ea861e;
+		color: #ffffff;
+		text-align: center;
+		border: none;
+		border-radius: 5px;
+		font-size: 16px;
+	}
+	</style>
+	
+	<script>
+		$(document).ready(function() {
+			$("#popup_open").click(function() {
+				$("#popup_wrap").css("display", "block");
+				$("#mask").css("display", "block");
+			});
+		});
+
+		$(document).ready(function() {
+			$("#popup_open").click(function() {
+				$("#popup_wrap").css("display", "block");
+				$("#mask").css("display", "block");
+			});
+			$("#popup_close").click(function() {
+				$("#popup_wrap").css("display", "none");
+				$("#mask").css("display", "none");
+			});
+		});
+		
+	</script>
+	
+	<script type="text/javascript">
+		$(function(){
+			$("#add").click(function(){
+				var value = $('#main-class').val();
+				
+				alert(value);
+		    });
+		});
+	</script>
+
+</head>
+<body>
+	<div class="d-flex" id="wrapper">
+		<th:block th:include="fragment/sidebar :: sidebar"></th:block>
+	
+	    <div id="page-content-wrapper">
+	    	<div class="header">
+		        <button class="btn" id="menu-toggle"><span class="fa fa-navicon"></span></button>
+	    	</div>
+	        
+		    <div class="container-fluid">
+		        <ul class="page-depth">
+		        	<li class="logo"><a href="/main"><img src="/image/logo.jpg" width="75"></a></li>
+		        </ul>
+		        <div class="content">
+		        <h1 class="title mt-4 pb-2">매뉴얼 작성</h1>
+		        </div>
+		        <div class="container">
+			    	<div class="row" style="margin-top: 80px;">
+						<div class="col-sm-2" style="">
+			    			<div class="class-name">카테고리</div>
+							<div class="class-name">대분류</div>
+							<div class="class-name">중분류</div>
+							<div class="class-name">소분류</div>
+						</div>
+						<div class="col-sm-10">
+						    <div class="select-box">
+							 	<select name="category" class="category">
+									<option value="Trainer">Trainer</option>
+									<option value="Agent">Agent</option>
+									<option value="Manager" >Manager</option>
+									<option value="ezbot">ezbot</option>
+									<option value="AI InspectorOne">AI InspectorOne</option>
+									<option value="TestOne">TestOne</option>
+								</select>
+						    </div>
+						    <div class="select-box">
+								<select name="main-class" class="category">
+									<option value="Trainer">Trainer</option>
+									<option value="Agent">Agent</option>
+									<option value="Manager" >Manager</option>
+									<option value="ezbot">ezbot</option>
+									<option value="AI InspectorOne">AI InspectorOne</option>
+									<option value="TestOne">TestOne</option>
+								</select>
+						        <button type="button" class="add-class" id="popup_open">추가</button>
+						        <button class="del-class" id="">삭제</button>
+						    </div>
+						    <div class="select-box">
+								<select name="middle-class" class="category">
+									<option value="Trainer">Trainer</option>
+									<option value="Agent">Agent</option>
+									<option value="Manager" >Manager</option>
+									<option value="ezbot">ezbot</option>
+									<option value="AI InspectorOne">AI InspectorOne</option>
+									<option value="TestOne">TestOne</option>
+								</select>
+						        <button class="add-class" id="">추가</button>
+						        <button class="del-class" id="">삭제</button>
+						    </div>
+						    <div class="select-box">
+								<select name="sub-class" class="category">
+									<option value="Trainer">Trainer</option>
+									<option value="Agent">Agent</option>
+									<option value="Manager" >Manager</option>
+									<option value="ezbot">ezbot</option>
+									<option value="AI InspectorOne">AI InspectorOne</option>
+									<option value="TestOne">TestOne</option>
+								</select>
+						        <button class="add-class" id="">추가</button>
+						        <button class="del-class" id="">삭제</button>
+							</div>
+						</div>
+						
+						<div class="col-md-12 editor">
+					      <textarea id="comment-md" name="comment" placeholder="내용을 입력해주세요..."></textarea>
+					      <br />
+					      <div id="comment-md-preview-container">
+					        <div class="well well-sm well-light md-preview margin-top-10" id="comment-md-preview"></div>
+					      </div>
+					      <div class="write-button-group">
+							  <button class="btn write-button" id="">등록</button>
+							  <button class="btn write-button" id="">취소</button>
+					      </div>
+					    </div>
+						<!-- <th:block th:include="fragment/markdown :: markdown"></th:block> -->
+		        	</div>
+		        </div>
+		    </div>
+	    </div>
+	</div>
+	
+	<div id="popup_wrap">
+		<div class="popup-cont">
+			<div class="mb-5">
+				<input type="text" id="main-class">
+			</div> 
+			<button type="button" id="add">추가</button>
+			<button id="popup_close">닫기</button>
+		</div>
+	</div>
+	<div id="mask"></div>
+
+	<script th:src="@{/js/sidebar.js}"></script>
+</body>
+</html>

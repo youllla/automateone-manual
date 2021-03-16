@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	<head>
+	<meta charset="UTF-8">
+	</head>
+	
+	<body>
+	<div th:fragment="sidebar" >
+		<div class="bg-light border-right" id="sidebar-wrapper" >
+			<div class="sidebar-heading">
+	      		<input type="text" placeholder="검색어를 입력하세요." >
+	    	</div>
+	    	<div class="list-group">
+				<div class="treeview" id="treeview" style="height:90vh" ></div>
+				<div class="sidebar-footer" style="height:6vh">
+					COPYRIGHT gridone
+					<button type="button" class="btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<i class="fa fa-cog"></i>
+					</button>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="/manualWrite">매뉴얼 작성</a>
+					</div>
+				</div>
+	    	</div>
+	    </div>
+	</div>
+		
+	</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>ACE in Action</title>
+
+    <link rel="stylesheet" href="/css/styles.css" type="text/css" media="screen" charset="utf-8">
+    
+    <script async="true" src="https://use.edgefonts.net/source-code-pro.js"></script>
+    
+
+    <link href="./doc/site/images/favicon.ico" rel="icon" type="image/x-icon">
+    
+    <style>
+    #editor {
+	    position: absolute;
+	    width: 500px;
+	    height: 400px;
+	}
+    </style>
+</head>
+<body>
+
+<div id="editor">some text</div>
+
+<script th:src="@{/js/ace.js}" type="text/javascript" charset="utf-8"></script>
+<script th:src="@{/js/theme-twilight.js}" type="text/javascript" charset="utf-8"></script>
+
+<script>
+    var editor = ace.edit("editor");
+</script>
+
+</body>
+</html>

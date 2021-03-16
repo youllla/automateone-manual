@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"> 
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="https://kendo.cdn.telerik.com/2021.1.119/styles/kendo.default-v2.min.css" />
+<script src="https://kendo.cdn.telerik.com/2021.1.119/js/jquery.min.js"></script>
+<script src="https://kendo.cdn.telerik.com/2021.1.119/js/kendo.all.min.js"></script>
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link th:href="@{/css/sidebar.css}" rel="stylesheet">
+<link th:href="@{/css/manual.css}" rel="stylesheet">
+    
+</head>
+<body>
+	<div class="d-flex" id="wrapper">
+		<th:block th:include="fragment/sidebar :: sidebar"></th:block>
+	
+	    <div id="page-content-wrapper">
+	    	<div class="header">
+		        <button class="btn" id="menu-toggle"><span class="fa fa-navicon"></span></button>
+	    	</div>
+	        
+		    <div class="container-fluid">
+		        <ul class="page-depth">
+		        	<li><i class="fa fa-leanpub"></i></li>
+		        	<li><a href="#"><strong>AutomateOne Trainer</strong></a></li>
+		        	<li><a href="#"><span>/ 3.0</span></a></li>
+		        	<li><a href="#"><span>/ AutomateOne 3.0 ibizbot Trainer 개요</span></a></li>
+					<li class="logo"><a href="/main"><img src="/image/logo.jpg" width="75"></a></li>
+		        </ul>
+		        <div class="content">
+			    	<h3 class="title mt-4 pb-2" id="heading-text">01-1 AutomateOne Trainer</h3>
+			    	
+					<h4 class="mt-4" id="heading-text"><strong>AutomateOne 3.0 ibizbot Trainer 개요</strong></h4>
+			    	<h6>1.1. AutomateOne 3.0 ibizbot Trainer 소개</h6>
+					<ol>
+					<li><strong>AO3 스크립트 기본 구조</strong></li>
+					<ul>
+					<li>AO3 스크립트는 액션과 태스크로 구성됩니다.<ul>
+					<li>스크립트 패키지 구조</li>
+					<p>스크립트 패키지는 주어진 업무를 처리하기 위한 전체 스크립트로 아래와 같은 구조를 가지고 있으며 태스크와 액션들로 구성되어 집니다.<br>
+					<img src="http://localhost:28080/uploadImage/test.png" alt="test.png" ></p>
+					</ul>
+					</li>
+					</ul>
+					<li>AO3 윈도우 구성도</li>
+					<li>스크립트 패키지 생성</li>
+					</ol>
+					
+					<pre><code>&lt;html&gt;
+    &lt;h1&gt;&lt;/h1&gt;
+&lt;/html
+</code></pre>
+					
+					
+					<ol>
+					<li>list text here<ul>
+					<li>zzzz<ul>
+					<li>zzz</li>
+					</ul>
+					</li>
+					</ul>
+					</li>
+					<li>dd</li>
+					<li>dzzz</li>
+					</ol>
+					
+					<ul>
+					<li>list text here</li>
+					<li>test</li>
+					</ul>
+					<blockquote>
+					<p>quote here</p>
+					</blockquote>
+
+
+		        </div>
+		    </div>
+	    </div>
+	</div>
+
+	<script th:src="@{/js/sidebar.js}"></script>
+</body>
+</html>

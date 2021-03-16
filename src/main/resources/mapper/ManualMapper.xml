@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.automateone.manual.mapper.ManualMapper">
+	
+	<!-- 매뉴얼 등록 -->
+	<insert id="manualInsert" parameterType="com.automateone.manual.vo.ManualVO">
+		INSERT INTO TB_MANUAL (
+			CATEGORY
+			,VERSION_ID
+			,TITLE
+			,CONTENT
+			,PARSE_CONTENT
+			,REG_DATE
+			,UPD_DATE
+		)
+		VALUES (
+			#{category}
+			,#{version_id}
+			,#{title}
+			,#{content}
+			,#{parse_content}
+			,now()
+			,now()
+		)
+	</insert>
+	
+	<!-- 매뉴얼 상세 -->
+	<select id="manualView" parameterType="int" resultType="integer">
+		SELECT *
+		FROM TB_MANUAL
+		WHERE CATEGORY=#{category}
+	</select>
+	
+</mapper>
